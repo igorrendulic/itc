@@ -9,6 +9,7 @@ package itc
 
 import (
 	"fmt"
+
 	"github.com/fgrid/itc/bit"
 	"github.com/fgrid/itc/event"
 	"github.com/fgrid/itc/id"
@@ -60,6 +61,13 @@ func (s *Stamp) grow() (*event.Event, int) {
 func (s *Stamp) Join(other *Stamp) {
 	s.id = id.New().Sum(s.id, other.id)
 	s.event = event.Join(s.event, other.event)
+}
+
+func (s *Stamp) Peek() *Stamp {
+	peekStamp := NewStamp()
+	peekStamp.id = id.New()
+	peekStamp.event = s.event.Clone()
+	return peekStamp
 }
 
 // LEQ Compares the stamp with the given other stamp and returns 'true' if this stamp is less or equal (LEQ).

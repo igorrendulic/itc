@@ -27,6 +27,21 @@ func Example2() {
 	// b: ((0, 1), 0)
 }
 
+func TestPeek(t *testing.T) {
+	a := NewStamp()
+	a.Event()
+	a.Event()
+	peeked := a.Peek()
+
+	fmt.Printf("Peeked: %v\n", peeked)
+	fmt.Printf("a: %v\n", a)
+
+	shouldBeLess := a.LEQ(peeked)
+	if !shouldBeLess {
+		t.Errorf("Value should be less than a")
+	}
+}
+
 func Example3() {
 	a := NewStamp()
 	b := a.Fork()
