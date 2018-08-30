@@ -2,8 +2,9 @@ package event
 
 import (
 	"fmt"
-	"github.com/fgrid/itc/bit"
 	"testing"
+
+	"github.com/igorrendulic/itc/bit"
 )
 
 func TestEventAsLeaf(t *testing.T) {

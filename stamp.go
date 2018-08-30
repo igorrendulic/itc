@@ -10,9 +10,9 @@ package itc
 import (
 	"fmt"
 
-	"github.com/fgrid/itc/bit"
-	"github.com/fgrid/itc/event"
-	"github.com/fgrid/itc/id"
+	"github.com/igorrendulic/itc/bit"
+	"github.com/igorrendulic/itc/event"
+	"github.com/igorrendulic/itc/id"
 )
 
 // Stamp declares the state of the clock for a given identity and a given stream of events.
@@ -65,7 +65,6 @@ func (s *Stamp) Join(other *Stamp) {
 
 func (s *Stamp) Peek() *Stamp {
 	peekStamp := NewStamp()
-	peekStamp.id = id.New()
 	peekStamp.event = s.event.Clone()
 	return peekStamp
 }

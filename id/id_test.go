@@ -2,8 +2,9 @@ package id
 
 import (
 	"fmt"
-	"github.com/fgrid/itc/bit"
 	"testing"
+
+	"github.com/igorrendulic/itc/bit"
 )
 
 func TestIdAsLeaf(t *testing.T) {

@@ -2,7 +2,8 @@ package event
 
 import (
 	"fmt"
-	"github.com/fgrid/itc/bit"
+
+	"github.com/igorrendulic/itc/bit"
 )
 
 type Event struct {

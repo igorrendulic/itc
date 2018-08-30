@@ -42,6 +42,17 @@ func TestPeek(t *testing.T) {
 	}
 }
 
+func TestPeekJoin(t *testing.T) {
+	a := NewStamp()
+	a.Event()
+	remoteStamp := a.Peek()
+
+	b := NewStamp()
+	b.Event()
+	b.Join(remoteStamp)
+	fmt.Printf("Is this working? %v\n", b)
+}
+
 func Example3() {
 	a := NewStamp()
 	b := a.Fork()
